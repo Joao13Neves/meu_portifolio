@@ -30,7 +30,7 @@ body {
 }
 
 section {
-  min-height: 100vh;
+  min-height: 80vh;
   padding: 10rem 9% 2rem;
 }
 
@@ -216,7 +216,7 @@ section {
 }
 
 .services-box i {
-  font-size: 6rem;
+  font-size: 4rem;
   color: var(--main-color);
 }
 
@@ -227,4 +227,15 @@ section {
 .services-box p {
   font-size: 1.8rem;
   margin: 1rem 0 3rem;
+}
+
+.portifolio {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background: var(--second-bg-color);
+}
+
+.heading {
+  margin-bottom: 3rem;
 }
