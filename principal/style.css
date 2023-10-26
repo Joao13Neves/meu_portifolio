@@ -361,6 +361,14 @@ span {
   cursor: pointer;
 }
 
+.success {
+  color: greenyellow;
+}
+
+.error {
+  color: tomato;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;

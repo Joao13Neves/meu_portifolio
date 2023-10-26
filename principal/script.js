@@ -60,3 +60,71 @@ const typed = new Typed('.multiple-text', {
     backDelay: 1000,
     loop: true
 });
+
+/*================ settings forms ================*/
+class FormSubmit {
+  constructor(settings) {
+    this.settings = settings;
+    this.form = document.querySelector(settings.form);
+    this.formbutton = document.querySelector(settings.button);
+    if (this.form) {
+      this.url = this.form.getAttribut("action");
+    }
+    this.sendForm = this.sendForm.bind(this);
+  }
+
+  displaySuccess() {
+    this.form,innerHTML = this.settings.success;
+  }
+
+  displayError() {
+    this.form,innerHTML = this.settings.error;
+  }
+
+  getFormObject() {
+    const formObject = {};
+    const fields = this.form.querySelectorAll("[name]");
+    fields.forEach((field) => {
+      formObject[field.getAttribute("name")] = field.value;
+    });
+    return formObject;
+  }
+
+  onSubmission(event) {
+    event.preventDefault();
+    event.target.disabled = true;
+    event.target.innerText = "Enviando...";
+  }
+
+ async sendForm (event) {
+  try {
+    this.onSubmission(event);
+    await fetch(this.url, {
+      method: "POST",
+      headers: {
+        "Content-Typed": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(this.gerFormObject()),
+    });
+    this.displaySuccess();
+  } catch (error) {
+    this.displayError();
+    throw new Error(error);
+  }
+ }  
+
+  init() {
+    if (this.form) this.formbutton.addEventListener("click", this.sendForm);
+    return this;
+  } 
+}
+
+const FormSubmit = new FormSubmit({
+  form: "[data-form]",
+  button: "[data-button]",
+  success: "<h1 class='success'>Seu e-mail foi enviado com sucesso! Em breve irei entrar em contato.</h1>",
+  error: "<h1 class='error'>Não foi possível enviar sua mensagem! Tente novamente mais tarde ou entre em contato através de outra rede.</h1>",
+});;
+FormSubmit.init();
+
