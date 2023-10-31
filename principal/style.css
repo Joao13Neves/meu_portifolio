@@ -361,13 +361,18 @@ span {
   cursor: pointer;
 }
 
-.success {
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+/* styled submit used formsubmit.io*/
+/* .success {
   color: greenyellow;
 }
 
 .error {
   color: tomato;
-}
+} */
 
 .footer {
   display: flex;
