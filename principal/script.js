@@ -75,6 +75,12 @@ const mascaraTelefone = (valor) => {
     tel.value = valor // Insere o(s) valor(es) no campo
 }
 
+/*================ function send mensage button ================*/
+function sendMensage() {
+  alert('')
+}
+
+
 /*================ settings forms used formsubmit.io ================*/
 // class FormSubmit {
 //   constructor(settings) {
