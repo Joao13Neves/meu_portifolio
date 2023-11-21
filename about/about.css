@@ -1,0 +1,14 @@
+@import '../principal/style.css';
+
+.about-img--secundary img {
+    width: 20vw;
+}
+
+.about-secundary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: var(--bg-color);
+  }
+

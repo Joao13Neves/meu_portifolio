@@ -51,7 +51,7 @@ section {
   border-bottom: .1rem solid rgba(0, 0, 0, .2);
 }
 
-.header h1 {
+.header a {
   color: var(--text-color);
   font-size: 3.5rem;
 }
@@ -189,6 +189,7 @@ span {
 
 .about-content h3 {
   font-size: 2.6rem;
+  margin-top: 30px;
 }
 
 .about-content p {
@@ -359,6 +360,19 @@ span {
   margin-top: 2rem;
   cursor: pointer;
 }
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+/* styled submit used formsubmit.io*/
+/* .success {
+  color: greenyellow;
+}
+
+.error {
+  color: tomato;
+} */
 
 .footer {
   display: flex;
